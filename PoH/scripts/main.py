@@ -54,7 +54,6 @@ message.place(x=150,y=55,width=300, height=10)
 #new img def
 def newimg():
     global cegend, panel, img, gender, curimg, score, rounds, scoreper
-
     print('newimg')
     gender = random.choice(['m','f'])
     if gender == 'm':
@@ -67,9 +66,7 @@ def newimg():
     img = ImageTk.PhotoImage(Image.open(curimg))
     panel = tk.Label(root, image = img, bg='black')
     panel.place(x=150,y=75,width=300, height=200)
-    print(gender)
     #calc score
-    print(score, rounds)
     if rounds == 0 or score == 0:
         scoreper = 'YOU HAVE PLAYED '+str(rounds)+' ROUNDS, YOUR CURRENT ACCURACY IS '+str(round(((score+0.001)/(rounds+0.001))*100))+'%'+' ('+str(score)+'/'+str(rounds)+')'
     else:
@@ -84,8 +81,6 @@ newimg()
 #buttons
 def pole():
     global gender, score, rounds
-    print('clicked p')
-    print(gender)
     if gender == 'm':
         print('correct')
         score +=1
@@ -99,8 +94,6 @@ def pole():
 
 def hole():
     global gender, score, rounds
-    print('clicked h')
-    print(gender)
     if gender == 'f':
         print('correct')
         score +=1
